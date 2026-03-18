@@ -15,13 +15,12 @@
   <!-- NAV -->
   <nav id="nav">
     <div class="container nav-inner">
-      <div class="nav-logo">SW</div>
+      <div class="nav-logo">Sean Woods</div>
       <div class="nav-links">
         <a href="#hero">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Education</a>
         <a href="#contact">Contact</a>
-        <!-- resume.pdf must be generated from resume.html and copied here — see README -->
         <a href="resume.pdf" download="Sean_Woods_Resume.pdf" class="nav-cta">Download CV</a>
       </div>
     </div>
@@ -37,6 +36,7 @@
         <h1 class="hero-name">SEAN <span>WOODS</span></h1>
         <div class="hero-sub">AI Student · Web Developer · Builder</div>
         <p class="hero-bio">Self-driven developer and AI enthusiast building production-grade web apps for real clients — Stripe payments, Supabase backends, full deployments. Currently studying a Bachelor of AI at UTS.</p>
+        <div class="hero-badge">⚽ Semi-Professional Footballer · UNSW FC · NPL Men's</div>
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">View Experience ↓</a>
           <a href="#contact" class="btn-outline">Get In Touch</a>
@@ -45,23 +45,36 @@
     </div>
   </section>
 
-  <!-- TECH STACK STRIP -->
+  <!-- TECH STACK STRIP — infinite marquee -->
   <div id="stack">
-    <div class="container">
-      <div class="stack-inner fade-in">
-        <span class="stack-label">Tech Stack</span>
+    <div class="stack-marquee-wrapper">
+      <div class="stack-track">
+        <!-- Set 1 -->
         <span class="stack-pill">Next.js</span>
-        <span class="stack-pill">TypeScript</span>
         <span class="stack-pill">React</span>
+        <span class="stack-pill">TypeScript</span>
+        <span class="stack-pill">HTML &amp; CSS</span>
         <span class="stack-pill">Tailwind CSS</span>
         <span class="stack-pill">Supabase</span>
         <span class="stack-pill">Stripe API</span>
-        <span class="stack-pill">Claude Code</span>
         <span class="stack-pill">Git &amp; GitHub</span>
         <span class="stack-pill">Vercel</span>
         <span class="stack-pill">VS Code</span>
+        <span class="stack-pill">Claude Code</span>
         <span class="stack-pill">Python</span>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <span class="stack-pill">Next.js</span>
+        <span class="stack-pill">React</span>
+        <span class="stack-pill">TypeScript</span>
         <span class="stack-pill">HTML &amp; CSS</span>
+        <span class="stack-pill">Tailwind CSS</span>
+        <span class="stack-pill">Supabase</span>
+        <span class="stack-pill">Stripe API</span>
+        <span class="stack-pill">Git &amp; GitHub</span>
+        <span class="stack-pill">Vercel</span>
+        <span class="stack-pill">VS Code</span>
+        <span class="stack-pill">Claude Code</span>
+        <span class="stack-pill">Python</span>
       </div>
     </div>
   </div>
@@ -124,7 +137,9 @@
       <div class="edu-grid">
         <div class="edu-card fade-in">
           <div class="edu-year">2025 – 2028</div>
-          <div class="edu-degree">Bachelor of Artificial Intelligence</div>
+          <a href="https://www.uts.edu.au/courses/bachelor-of-artificial-intelligence" target="_blank" rel="noopener" class="edu-degree-link">
+            <div class="edu-degree">Bachelor of Artificial Intelligence ↗</div>
+          </a>
           <div class="edu-school">University of Technology Sydney (UTS)</div>
         </div>
         <div class="edu-card fade-in">
@@ -153,7 +168,6 @@
 
         <div class="fade-in">
           <form class="contact-form" action="https://formsubmit.co/woods04sean@gmail.com" method="POST">
-            <!-- Spam protection -->
             <input type="text" name="_honey" style="display:none" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="New contact from seanwoods.com" />
