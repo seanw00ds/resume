@@ -119,8 +119,17 @@
     /* ── Print ──────────────────────────────────── */
     @media print {
       body { font-size: 11px; }
-      .page { padding: 20px 28px; max-width: 100%; }
-      @page { margin: 0.4in; size: A4; }
+      .page { padding: 16px 24px; max-width: 100%; }
+      @page { margin: 0.35in; size: A4; }
+      .header { padding-bottom: 12px; margin-bottom: 14px; }
+      .body { gap: 20px; }
+      .sidebar-section { margin-bottom: 14px; }
+      .main-section { margin-bottom: 14px; }
+      .job { margin-bottom: 10px; }
+      .job-bullets li { line-height: 1.6; }
+      .strength-list li { line-height: 1.8; }
+      .edu-entry { margin-bottom: 8px; }
+      .resume-footer { margin-top: 12px; padding-top: 8px; }
     }
   </style>
 </head>
@@ -151,9 +160,7 @@
         <div class="sidebar-section">
           <div class="section-label">Education</div>
           <div class="edu-entry">
-            <a href="https://www.uts.edu.au/courses/bachelor-of-artificial-intelligence" target="_blank" rel="noopener" style="text-decoration:none;">
-              <div class="edu-name" style="color:var(--accent);">University of Technology Sydney ↗</div>
-            </a>
+            <div class="edu-name">University of Technology Sydney</div>
             <div class="edu-sub">Bachelor of AI</div>
             <div class="edu-dates">2025–2028</div>
           </div>
@@ -194,6 +201,16 @@
             <li>Adaptability</li>
             <li>Time Management</li>
           </ul>
+        </div>
+
+        <!-- Football -->
+        <div class="sidebar-section">
+          <div class="section-label">Football</div>
+          <div class="edu-entry">
+            <div class="edu-name">UNSW FC</div>
+            <div class="edu-sub">NPL Men's · Semi-Professional</div>
+            <div class="edu-dates">Current</div>
+          </div>
         </div>
 
       </aside>
