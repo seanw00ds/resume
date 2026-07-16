@@ -1,135 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sean Woods — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* ── Variables ─────────────────────────────── */
     :root {
-      --accent:   #6366f1;
-      --accent-lt:#ede9fe;
-      --accent-dk:#4f46e5;
-      --pill-text:#5b21b6;
-      --text:     #0f172a;
-      --muted:    #475569;
-      --faint:    #94a3b8;
-      --border:   #e0e7ff;
-      --sidebar:  200px;
-      --gap:      32px;
-      --pad:      44px;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      --fg:      #121310;
+      --fg-soft: #3a3b37;
+      --fg-mute: #77786f;
+      --line:    #d9d6ca;
+      --accent:  #146c43;
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+      --sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* ── Reset ─────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #fff; color: var(--text); font-size: 13px; line-height: 1.4; }
+    body {
+      background: #fff;
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 12.5px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
     ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
 
-    /* ── Page wrapper ───────────────────────────── */
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px var(--pad);
-    }
+    .page { max-width: 860px; margin: 0 auto; padding: 44px 48px; }
 
-    /* ── Section label ──────────────────────────── */
-    .section-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 4px;
-      margin-bottom: 10px;
-    }
-
-    /* ── Header ─────────────────────────────────── */
+    /* ── Header ─────────────────────────────── */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      padding-bottom: 20px;
-      margin-bottom: 24px;
-      border-bottom: 2px solid var(--accent);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--fg);
     }
-    .header-name { font-size: 32px; font-weight: 800; letter-spacing: 4px; color: var(--text); }
-    .header-tagline { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; color: var(--accent); margin-top: 4px; }
-    .header-contact { text-align: right; font-size: 11px; color: var(--muted); line-height: 1.9; }
-    .header-contact a { color: var(--accent); text-decoration: none; font-weight: 500; }
-    .header-contact a:hover { text-decoration: underline; }
-
-    /* ── Two-col body ───────────────────────────── */
-    .body { display: grid; grid-template-columns: var(--sidebar) 1fr; gap: var(--gap); }
-
-    /* ── Sidebar sections ───────────────────────── */
-    .sidebar-section { margin-bottom: 22px; }
-
-    /* Pills (tech skills) */
-    .pills { display: flex; flex-wrap: wrap; gap: 4px; }
-    .pill {
-      background: var(--accent-lt);
-      color: var(--pill-text);
+    .header-name {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: -0.04em;
+    }
+    .header-tagline {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: lowercase;
+      color: var(--fg-mute);
+      margin-top: 6px;
+    }
+    .header-avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-family: var(--mono);
       font-size: 9px;
+      letter-spacing: 0.06em;
+      color: var(--fg-soft);
+    }
+    .header-avail::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .header-contact {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-soft);
+      line-height: 1.9;
+    }
+    .header-contact a { color: var(--accent); }
+
+    /* ── Body grid ──────────────────────────── */
+    .body { display: grid; grid-template-columns: 210px 1fr; gap: 34px; }
+
+    /* ── Section labels ─────────────────────── */
+    .section-label {
+      font-family: var(--mono);
       font-weight: 500;
-      padding: 2px 8px;
-      border-radius: 10px;
+      font-size: 8.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fg-mute);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+      margin-bottom: 11px;
     }
 
-    /* Strength list */
-    .strength-list li { font-size: 11px; color: var(--muted); line-height: 2.1; }
-    .strength-list li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .sidebar-section { margin-bottom: 20px; }
+    .main-section { margin-bottom: 20px; }
+    .main-section:last-child, .sidebar-section:last-child { margin-bottom: 0; }
 
-    /* Education entries */
-    .edu-entry { margin-bottom: 12px; }
-    .edu-entry:last-child { margin-bottom: 0; }
-    .edu-name { font-weight: 700; font-size: 12px; color: var(--text); line-height: 1.3; }
-    .edu-sub { font-size: 11px; color: var(--muted); }
-    .edu-dates { font-size: 10px; color: var(--faint); }
+    /* ── Sidebar entries ────────────────────── */
+    .entry { margin-bottom: 12px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-name { font-family: var(--mono); font-weight: 600; font-size: 11px; letter-spacing: -0.01em; line-height: 1.35; }
+    .entry-sub { font-size: 11px; color: var(--fg-soft); margin-top: 1px; }
+    .entry-dates { font-family: var(--mono); font-size: 9px; color: var(--fg-mute); margin-top: 2px; }
+    .entry-note { font-family: var(--mono); font-size: 9px; color: var(--accent); margin-top: 2px; letter-spacing: 0.03em; }
 
-    /* ── Main content ───────────────────────────── */
-    .main-section { margin-bottom: 22px; }
-
-    .about-text { font-size: 12px; color: #374151; line-height: 1.6; }
-
-    /* Job entries */
-    .job { margin-bottom: 16px; }
-    .job:last-child { margin-bottom: 0; }
-    .job-header { display: flex; justify-content: space-between; align-items: baseline; }
-    .job-title { font-weight: 700; font-size: 12px; color: var(--text); }
-    .job-dates { font-size: 10px; color: var(--faint); white-space: nowrap; }
-    .job-company { font-size: 11px; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
-    .job-bullets { padding-left: 14px; }
-    .job-bullets li { font-size: 11px; color: var(--muted); line-height: 1.9; list-style: disc; }
-
-    /* ── Footer ─────────────────────────────────── */
-    .resume-footer {
-      margin-top: 20px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
+    /* ── Stack rows ─────────────────────────── */
+    .stack-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
+      gap: 8px;
+      padding: 3.5px 0;
+      border-bottom: 1px solid #eceade;
       font-size: 10px;
-      color: var(--faint);
     }
-    .resume-footer a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .stack-row:last-child { border-bottom: 0; }
+    .stack-row dt { font-family: var(--mono); font-weight: 500; font-size: 9.5px; }
+    .stack-row dd { font-family: var(--mono); font-size: 8.5px; color: var(--fg-mute); text-align: right; text-transform: lowercase; }
 
-    /* ── Print ──────────────────────────────────── */
+    /* ── Strengths ──────────────────────────── */
+    .strength-list li { font-size: 10.5px; color: var(--fg-soft); line-height: 1.95; }
+    .strength-list li::before { content: "— "; color: var(--accent); }
+
+    /* ── About ──────────────────────────────── */
+    .about-text { font-size: 11.5px; color: var(--fg-soft); line-height: 1.6; }
+
+    /* ── Jobs ───────────────────────────────── */
+    .job { margin-bottom: 14px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .job-title { font-family: var(--mono); font-weight: 600; font-size: 11.5px; letter-spacing: -0.01em; }
+    .job-dates { font-family: var(--mono); font-size: 9px; color: var(--fg-mute); white-space: nowrap; }
+    .job-company { font-size: 10.5px; color: var(--fg-mute); margin: 1px 0 5px; }
+    .job-bullets { padding-left: 14px; }
+    .job-bullets li { font-size: 10.5px; color: var(--fg-soft); line-height: 1.65; list-style: disc; margin-bottom: 2px; }
+    .job-bullets li::marker { color: var(--accent); }
+
+    /* ── Footer ─────────────────────────────── */
+    .resume-footer {
+      margin-top: 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.04em;
+      color: var(--fg-mute);
+    }
+    .resume-footer a { color: var(--accent); }
+
+    /* ── Print ──────────────────────────────── */
     @media print {
-      body { font-size: 11px; }
-      .page { padding: 16px 24px; max-width: 100%; }
-      @page { margin: 0.35in; size: A4; }
-      .header { padding-bottom: 12px; margin-bottom: 14px; }
-      .body { gap: 20px; }
-      .sidebar-section { margin-bottom: 14px; }
-      .main-section { margin-bottom: 14px; }
-      .job { margin-bottom: 10px; }
-      .job-bullets li { line-height: 1.6; }
-      .strength-list li { line-height: 1.8; }
-      .edu-entry { margin-bottom: 8px; }
-      .resume-footer { margin-top: 12px; padding-top: 8px; }
+      body { font-size: 13px; }
+      .page { padding: 18px 26px; max-width: 100%; }
+      @page { margin: 0.32in; size: A4; }
+      .header { padding-bottom: 15px; margin-bottom: 17px; }
+      .body { gap: 28px; }
+      .sidebar-section, .main-section { margin-bottom: 17px; }
+      .about-text { font-size: 12px; line-height: 1.62; }
+      .job { margin-bottom: 12px; }
+      .job-title { font-size: 12px; }
+      .job-company { font-size: 11px; margin-bottom: 5px; }
+      .job-bullets li { font-size: 11px; line-height: 1.6; margin-bottom: 2px; }
+      .strength-list li { font-size: 11px; line-height: 1.9; }
+      .entry { margin-bottom: 10px; }
+      .entry-name { font-size: 11.5px; }
+      .entry-sub { font-size: 11px; }
+      .stack-row { padding: 4px 0; }
+      .stack-row dt { font-size: 9.5px; }
+      .stack-row dd { font-size: 8.5px; }
+      .resume-footer { margin-top: 14px; padding-top: 9px; }
     }
   </style>
 </head>
@@ -139,105 +184,97 @@
     <!-- HEADER -->
     <header class="header">
       <div>
-        <div class="header-name">SEAN WOODS</div>
-        <div class="header-tagline">AI · WEB DEVELOPMENT · TECHNOLOGY</div>
+        <div class="header-name">Sean Woods</div>
+        <div class="header-tagline">ai student · web developer · builder</div>
+        <div class="header-avail">available 2–3 days/week — internships &amp; junior roles</div>
       </div>
       <div class="header-contact">
         <div>0490 254 358</div>
         <div>woods04sean@gmail.com</div>
         <div>Kogarah, Sydney</div>
-        <div>🌐 <a href="https://seanwoods.work">seanwoods.work</a></div>
+        <div><a href="https://seanwoods.work">seanwoods.work</a></div>
       </div>
     </header>
 
-    <!-- TWO-COL BODY -->
+    <!-- BODY -->
     <div class="body">
 
-      <!-- LEFT SIDEBAR -->
+      <!-- SIDEBAR -->
       <aside>
 
-        <!-- Education -->
         <div class="sidebar-section">
           <div class="section-label">Education</div>
-          <div class="edu-entry">
-            <div class="edu-name">University of Technology Sydney</div>
-            <div class="edu-sub">Bachelor of AI</div>
-            <div class="edu-dates">2025–2028</div>
+          <div class="entry">
+            <div class="entry-name">Bachelor of Artificial Intelligence</div>
+            <div class="entry-sub">University of Technology Sydney</div>
+            <div class="entry-dates">2025–2027</div>
+            <div class="entry-note">second year — halfway through</div>
           </div>
-          <div class="edu-entry">
-            <div class="edu-name">Endeavour Sports High School</div>
-            <div class="edu-sub">HSC · ATAR 80.05</div>
-            <div class="edu-dates">2017–2022</div>
+          <div class="entry">
+            <div class="entry-name">Higher School Certificate</div>
+            <div class="entry-sub">Endeavour Sports High School</div>
+            <div class="entry-dates">2017–2022 · ATAR 80.05</div>
           </div>
         </div>
 
-        <!-- Tech Skills -->
         <div class="sidebar-section">
-          <div class="section-label">Tech Skills</div>
-          <div class="pills">
-            <span class="pill">Next.js</span>
-            <span class="pill">TypeScript</span>
-            <span class="pill">React</span>
-            <span class="pill">Tailwind CSS</span>
-            <span class="pill">Supabase</span>
-            <span class="pill">Stripe API</span>
-            <span class="pill">Git &amp; GitHub</span>
-            <span class="pill">Vercel</span>
-            <span class="pill">Claude Code</span>
-            <span class="pill">VS Code</span>
-            <span class="pill">Python</span>
-            <span class="pill">HTML &amp; CSS</span>
-          </div>
+          <div class="section-label">Stack</div>
+          <dl>
+            <div class="stack-row"><dt>Claude Code</dt><dd>agentic dev, daily</dd></div>
+            <div class="stack-row"><dt>Next.js / React / TS</dt><dd>client builds</dd></div>
+            <div class="stack-row"><dt>Supabase</dt><dd>postgres, auth</dd></div>
+            <div class="stack-row"><dt>Stripe</dt><dd>payments</dd></div>
+            <div class="stack-row"><dt>Vercel / Git</dt><dd>deploys, ci</dd></div>
+            <div class="stack-row"><dt>Python / Java</dt><dd>coursework</dd></div>
+            <div class="stack-row"><dt>HTML / CSS / Tailwind</dt><dd>ui</dd></div>
+          </dl>
         </div>
 
-        <!-- Strengths -->
         <div class="sidebar-section">
           <div class="section-label">Strengths</div>
           <ul class="strength-list">
-            <li>Problem Solving</li>
-            <li>Client Communication</li>
-            <li>Sales &amp; Negotiation</li>
-            <li>Fast Learner</li>
+            <li>Problem solving</li>
+            <li>Client communication</li>
+            <li>Sales &amp; negotiation</li>
+            <li>Fast learner</li>
             <li>Adaptability</li>
-            <li>Time Management</li>
+            <li>Time management</li>
           </ul>
         </div>
 
-        <!-- Football -->
         <div class="sidebar-section">
           <div class="section-label">Football</div>
-          <div class="edu-entry">
-            <div class="edu-name">UNSW FC</div>
-            <div class="edu-sub">NPL Men's · Semi-Professional</div>
-            <div class="edu-dates">Current</div>
+          <div class="entry">
+            <div class="entry-name">UNSW FC</div>
+            <div class="entry-sub">NPL1 NSW · Semi-Professional</div>
+            <div class="entry-dates">current</div>
           </div>
         </div>
 
       </aside>
 
-      <!-- RIGHT MAIN CONTENT -->
+      <!-- MAIN -->
       <main>
 
-        <!-- About Me -->
         <div class="main-section">
-          <div class="section-label">About Me</div>
-          <p class="about-text">Self-driven developer and AI enthusiast currently completing a Bachelor of Artificial Intelligence at UTS. I build production-grade web applications for real clients — integrating payments, authentication, databases, and APIs from the ground up. Passionate about AI tools, automation, and turning ideas into working products. Bring equal parts technical ability and commercial thinking from hands-on experience in sales and client management.</p>
+          <div class="section-label">About</div>
+          <p class="about-text">Self-driven developer and AI student at UTS, halfway through a Bachelor of Artificial Intelligence. I build production-grade web applications for real, paying clients — payments, authentication, databases and APIs from the ground up. I use AI-assisted development (Claude Code) as a daily multiplier and bring commercial thinking from hands-on sales and client-management experience. Semi-professional footballer — the discipline transfers.</p>
         </div>
 
-        <!-- Work Experience -->
         <div class="main-section">
-          <div class="section-label">Work Experience</div>
+          <div class="section-label">Experience</div>
 
           <div class="job">
             <div class="job-header">
               <div class="job-title">Freelance Web Developer</div>
-              <div class="job-dates">Jul 2025 – Present</div>
+              <div class="job-dates">Jul 2025 – present</div>
             </div>
-            <div class="job-company">Self-Employed</div>
+            <div class="job-company">Woods Websites — self-employed · woodswebsites.com</div>
             <ul class="job-bullets">
-              <li>Built full-stack web apps for Oven Soccer, Speed and Sport, Kingdom Property Care, and Think Wisdom</li>
-              <li>Delivered complete solutions: Next.js + TypeScript front-ends, Supabase databases, Stripe payment integration, Vercel deployment</li>
-              <li>Handled end-to-end client work — scoping, design, build, launch, and ongoing support</li>
+              <li>Run my own freelance studio building web apps and software solutions for small businesses</li>
+              <li>Built and shipped full-stack apps for four paying clients — Ovens Soccer (ovenssoccer.com), Kingdom Property Care (kingdompropertycare.com), Speed and Sport, and Think Wisdom</li>
+              <li>Delivered complete solutions: Next.js + TypeScript front-ends, Supabase databases and auth, Stripe payment integration, Vercel deployment</li>
+              <li>Owned every engagement end-to-end — scoping, design, build, launch and ongoing support</li>
               <li>Used AI-assisted development (Claude Code) to accelerate delivery without sacrificing code quality</li>
             </ul>
           </div>
@@ -245,7 +282,7 @@
           <div class="job">
             <div class="job-header">
               <div class="job-title">Kids Speed Coach</div>
-              <div class="job-dates">Oct 2024 – Present</div>
+              <div class="job-dates">Oct 2024 – present</div>
             </div>
             <div class="job-company">Speed In Sport Australia</div>
             <ul class="job-bullets">
@@ -257,7 +294,7 @@
           <div class="job">
             <div class="job-header">
               <div class="job-title">Warehouse &amp; Landscaping Assistant</div>
-              <div class="job-dates">Dec 2024 – Present</div>
+              <div class="job-dates">Dec 2024 – present</div>
             </div>
             <div class="job-company">Garden Life</div>
             <ul class="job-bullets">
@@ -292,8 +329,8 @@
 
     <!-- FOOTER -->
     <footer class="resume-footer">
-      <span><em>Referees available on request</em></span>
-      <span>🌐 <a href="https://seanwoods.work">seanwoods.work</a></span>
+      <span>referees available on request</span>
+      <span><a href="https://seanwoods.work">seanwoods.work</a></span>
     </footer>
 
   </div>

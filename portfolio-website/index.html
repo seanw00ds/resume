@@ -1,200 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sean Woods — AI & Web Developer</title>
-  <meta name="description" content="Sean Woods — AI student and freelance web developer based in Sydney. Building production-grade apps with Next.js, Supabase, and Stripe." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sean Woods — AI Student &amp; Web Developer</title>
+  <meta name="description" content="Sean Woods — AI student at UTS and freelance web developer in Sydney. Ships production web apps for real clients with Next.js, Supabase and Stripe. Available 2–3 days/week." />
+  <meta property="og:title" content="Sean Woods — AI Student & Web Developer" />
+  <meta property="og:description" content="AI student at UTS, freelance web developer, semi-professional footballer. I ship real products for real clients." />
+  <meta property="og:url" content="https://seanwoods.work" />
+  <meta name="theme-color" content="#f6f4ee" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23101210'/%3E%3Ctext x='50%25' y='56%25' font-family='ui-monospace,monospace' font-size='15' font-weight='600' text-anchor='middle' dominant-baseline='middle' fill='%23f6f4ee' letter-spacing='-1'%3Esw%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <div class="container nav-inner">
-      <div class="nav-logo">Sean Woods</div>
-      <div class="nav-links">
-        <a href="#hero">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Education</a>
-        <a href="#contact">Contact</a>
-        <a href="resume.pdf" download="Sean_Woods_Resume.pdf" class="nav-cta">Download CV</a>
-      </div>
+  <header class="topbar">
+    <a class="mark" href="#top" aria-label="Top">SW</a>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#projects">projects</a>
+      <a href="#work">work</a>
+      <a href="#stack">stack</a>
+      <a href="#edu">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <div class="topbar__actions">
+      <a class="btn" href="resume.pdf" download="Sean Woods Resume.pdf">pdf</a>
+      <button class="btn btn--icon" id="themeToggle" type="button" aria-label="Toggle theme">
+        <svg class="ico-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="ico-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-    <div class="container">
-      <div class="fade-in">
-        <div class="hero-available">Available for Internships · 2026</div>
-        <h1 class="hero-name">SEAN <span>WOODS</span></h1>
-        <div class="hero-sub">AI Student · Web Developer · Builder</div>
-        <p class="hero-bio">Self-driven developer and AI enthusiast building production-grade web apps for real clients — Stripe payments, Supabase backends, full deployments. Currently studying a Bachelor of AI at UTS.</p>
-        <div class="hero-badge">⚽ Semi-Professional Footballer · UNSW FC · NPL Men's</div>
-        <div class="hero-actions">
-          <a href="#experience" class="btn-primary">View Experience ↓</a>
-          <a href="#contact" class="btn-outline">Get In Touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- TECH STACK STRIP — infinite marquee -->
-  <div id="stack">
-    <div class="stack-marquee-wrapper">
-      <div class="stack-track">
-        <!-- Set 1 -->
-        <span class="stack-pill">Next.js</span>
-        <span class="stack-pill">React</span>
-        <span class="stack-pill">TypeScript</span>
-        <span class="stack-pill">HTML &amp; CSS</span>
-        <span class="stack-pill">Tailwind CSS</span>
-        <span class="stack-pill">Supabase</span>
-        <span class="stack-pill">Stripe API</span>
-        <span class="stack-pill">Git &amp; GitHub</span>
-        <span class="stack-pill">Vercel</span>
-        <span class="stack-pill">VS Code</span>
-        <span class="stack-pill">Claude Code</span>
-        <span class="stack-pill">Python</span>
-        <!-- Set 2 (duplicate for seamless loop) -->
-        <span class="stack-pill">Next.js</span>
-        <span class="stack-pill">React</span>
-        <span class="stack-pill">TypeScript</span>
-        <span class="stack-pill">HTML &amp; CSS</span>
-        <span class="stack-pill">Tailwind CSS</span>
-        <span class="stack-pill">Supabase</span>
-        <span class="stack-pill">Stripe API</span>
-        <span class="stack-pill">Git &amp; GitHub</span>
-        <span class="stack-pill">Vercel</span>
-        <span class="stack-pill">VS Code</span>
-        <span class="stack-pill">Claude Code</span>
-        <span class="stack-pill">Python</span>
-      </div>
-    </div>
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero__eyebrow">kogarah, sydney · australia</p>
+      <h1 class="hero__name">Sean&nbsp;Woods</h1>
+      <p class="hero__role">AI Student &amp; Web Developer</p>
+      <p class="hero__quote-sub">
+        Studying AI at UTS. Building production web apps for real clients<br />
+        through my freelance studio, Woods Websites.
+      </p>
+      <p class="hero__avail">
+        <span class="dot" aria-hidden="true"></span>
+        available 2&ndash;3 days/week &mdash; internships &amp; junior roles &middot; 2026
+      </p>
+    </section>
 
-  <!-- WORK EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-label fade-in">Work Experience</div>
-      <div class="exp-grid">
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h2 class="section__title">Projects</h2>
 
-        <div class="exp-card featured fade-in">
-          <div class="exp-date">Jul 2025 – Present</div>
-          <div class="exp-role">Freelance Web Developer</div>
-          <div class="exp-company">Self-Employed</div>
-          <div class="exp-desc">Built full-stack apps for 4 clients: Oven Soccer, Speed and Sport, Kingdom Property Care, and Think Wisdom. End-to-end ownership from scoping to deployment — using AI-assisted development to ship fast without cutting corners.</div>
-          <div class="exp-tags">
-            <span class="exp-tag">Next.js</span>
-            <span class="exp-tag">Supabase</span>
-            <span class="exp-tag">Stripe</span>
-            <span class="exp-tag">Vercel</span>
+      <div class="projects">
+
+        <article class="project project--featured">
+          <div class="project__top">
+            <h3 class="project__title">Woods Websites</h3>
+            <p class="project__meta">my freelance studio &middot; live</p>
           </div>
-        </div>
+          <p class="project__body">
+            My freelance business &mdash; web design, development and software
+            solutions for small businesses. Every client project below was
+            scoped, built and shipped under this banner.
+          </p>
+          <ul class="project__links">
+            <li><a class="link" href="https://woodswebsites.com" target="_blank" rel="noopener">woodswebsites.com<span class="link__arr">&#8599;</span></a></li>
+          </ul>
+        </article>
 
-        <div class="exp-card fade-in">
-          <div class="exp-date">Jan 2024 – Aug 2024</div>
-          <div class="exp-role">Internal Sales / Account Manager</div>
-          <div class="exp-company">Graphic Art Mart</div>
-          <div class="exp-desc">Managed client accounts, cold outreach, and deal negotiation. Collaborated cross-functionally to resolve issues and streamline order fulfilment.</div>
-        </div>
+        <article class="project project--featured">
+          <div class="project__top">
+            <h3 class="project__title">Ovens Soccer</h3>
+            <p class="project__meta">client build &middot; live &middot; bookings + payments</p>
+          </div>
+          <p class="project__body">
+            Full platform for a football coaching business &mdash; session
+            bookings, Stripe payments, client management. Scoped it, built
+            it, launched it, and still support it.
+          </p>
+          <ul class="project__links">
+            <li><a class="link" href="https://ovenssoccer.com" target="_blank" rel="noopener">ovenssoccer.com<span class="link__arr">&#8599;</span></a></li>
+          </ul>
+        </article>
 
-        <div class="exp-card fade-in">
-          <div class="exp-date">Oct 2024 – Present</div>
-          <div class="exp-role">Kids Speed Coach</div>
-          <div class="exp-company">Speed In Sport Australia</div>
-          <div class="exp-desc">Coaching children aged 7–16 in sprint mechanics, movement patterns, and agility. High-energy structured environment focused on athletic development.</div>
-        </div>
+        <article class="project">
+          <div class="project__top">
+            <h3 class="project__title">Football Portfolio</h3>
+            <p class="project__meta">personal &middot; live &middot; player cv</p>
+          </div>
+          <p class="project__body">
+            Dark, cinematic player CV built to put in front of clubs and
+            agents &mdash; highlights, stats, season history.
+          </p>
+          <ul class="project__links">
+            <li><a class="link" href="https://football.seanwoods.work" target="_blank" rel="noopener">football.seanwoods.work<span class="link__arr">&#8599;</span></a></li>
+          </ul>
+        </article>
 
-        <div class="exp-card fade-in">
-          <div class="exp-date">Dec 2024 – Present</div>
-          <div class="exp-role">Warehouse &amp; Landscaping Assistant</div>
-          <div class="exp-company">Garden Life</div>
-          <div class="exp-desc">Warehousing duties including packing, receiving, stock organisation, and delivery. Supported landscaping projects involving plant care and site maintenance.</div>
-        </div>
+        <article class="project">
+          <div class="project__top">
+            <h3 class="project__title">Speed and Sport</h3>
+            <p class="project__meta">client build &middot; coaching business &middot; launching soon</p>
+          </div>
+          <p class="project__body">
+            Business site for a kids&rsquo; speed and sprint coaching
+            operation &mdash; designed, built and deployed end-to-end.
+          </p>
+        </article>
 
-        <div class="exp-card fade-in">
-          <div class="exp-date">2021 – 2023</div>
-          <div class="exp-role">Retail Assistant</div>
-          <div class="exp-company">Bunnings Warehouse</div>
-          <div class="exp-desc">Customer service, stock management, and team collaboration in a high-volume retail environment.</div>
-        </div>
+        <article class="project">
+          <div class="project__top">
+            <h3 class="project__title">Kingdom Property Care</h3>
+            <p class="project__meta">client build &middot; local business</p>
+          </div>
+          <p class="project__body">
+            Site for a garden and property maintenance business &mdash; full
+            build from scoping through launch.
+          </p>
+          <ul class="project__links">
+            <li><a class="link" href="https://kingdompropertycare.com" target="_blank" rel="noopener">kingdompropertycare.com<span class="link__arr">&#8599;</span></a></li>
+          </ul>
+        </article>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-label fade-in">Education</div>
-      <div class="edu-grid">
-        <div class="edu-card fade-in">
-          <div class="edu-year">2025 – 2028</div>
-          <a href="https://www.uts.edu.au/courses/bachelor-of-artificial-intelligence" target="_blank" rel="noopener" class="edu-degree-link">
-            <div class="edu-degree">Bachelor of Artificial Intelligence ↗</div>
-          </a>
-          <div class="edu-school">University of Technology Sydney (UTS)</div>
-        </div>
-        <div class="edu-card fade-in">
-          <div class="edu-year">2017 – 2022</div>
-          <div class="edu-degree">HSC</div>
-          <div class="edu-school">Endeavour Sports High School</div>
-          <div class="edu-detail">ATAR 80.05</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-label fade-in">Get In Touch</div>
-      <div class="contact-grid">
-
-        <div class="fade-in">
-          <div class="contact-heading">Let's talk.</div>
-          <p class="contact-blurb">Open to tech internships in AI, software, and automation. Reach out and I'll get back to you fast.</p>
-          <div class="contact-detail">woods04sean@gmail.com</div>
-          <div class="contact-detail">0490 254 358</div>
-          <div class="contact-detail"><span>Kogarah, Sydney</span></div>
-        </div>
-
-        <div class="fade-in">
-          <form class="contact-form" action="https://formsubmit.co/woods04sean@gmail.com" method="POST">
-            <input type="text" name="_honey" style="display:none" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New contact from seanwoods.work" />
-
-            <input class="form-input" type="text" name="name" placeholder="Your name" />
-            <div class="form-error" id="err-name">Please enter your name.</div>
-
-            <input class="form-input" type="email" name="email" placeholder="Your email" />
-            <div class="form-error" id="err-email">Please enter a valid email.</div>
-
-            <textarea class="form-textarea" name="message" placeholder="Message..."></textarea>
-            <div class="form-error" id="err-message">Please enter a message.</div>
-
-            <button type="submit" class="form-submit">Send Message →</button>
-          </form>
-        </div>
+        <article class="project">
+          <div class="project__top">
+            <h3 class="project__title">Think Wisdom</h3>
+            <p class="project__meta">client build</p>
+          </div>
+          <p class="project__body">
+            End-to-end client build &mdash; design, development and
+            deployment handled solo.
+          </p>
+        </article>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="container footer-inner">
-      <span>© 2026 Sean Woods</span>
-      <span>Built with Claude Code</span>
-    </div>
+    <!-- WORK -->
+    <section id="work" class="section reveal">
+      <h2 class="section__title">Work</h2>
+
+      <article class="role">
+        <div class="role__head">
+          <div>
+            <h3 class="role__title">Freelance Web Developer</h3>
+            <p class="role__org">Woods Websites &mdash; self-employed</p>
+          </div>
+          <p class="role__years">2025&mdash;present</p>
+        </div>
+        <ul class="role__bullets">
+          <li>Built and shipped full-stack web apps for four paying clients &mdash; Ovens Soccer, Speed and Sport, Kingdom Property Care and Think Wisdom.</li>
+          <li>Delivered complete solutions: Next.js + TypeScript front-ends, Supabase databases and auth, Stripe payment integration, Vercel deployment.</li>
+          <li>Owned the whole engagement end-to-end &mdash; scoping, design, build, launch and ongoing support.</li>
+          <li>Use Claude Code as a daily multiplier &mdash; AI-assisted development to ship fast without cutting corners.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role__head">
+          <div>
+            <h3 class="role__title">Kids Speed Coach</h3>
+            <p class="role__org">Speed In Sport Australia</p>
+          </div>
+          <p class="role__years">2024&mdash;present</p>
+        </div>
+        <ul class="role__bullets">
+          <li>Coach children aged 7&ndash;16 in sprint mechanics, movement patterns and agility &mdash; one-on-one and small groups.</li>
+          <li>Run a structured, positive environment focused on genuine athletic development.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role__head">
+          <div>
+            <h3 class="role__title">Warehouse &amp; Landscaping Assistant</h3>
+            <p class="role__org">Garden Life</p>
+          </div>
+          <p class="role__years">2024&mdash;present</p>
+        </div>
+        <ul class="role__bullets">
+          <li>Warehousing &mdash; packing, receiving, stock organisation and deliveries &mdash; plus landscaping project support.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role__head">
+          <div>
+            <h3 class="role__title">Internal Sales / Account Manager</h3>
+            <p class="role__org">Graphic Art Mart</p>
+          </div>
+          <p class="role__years">2024</p>
+        </div>
+        <ul class="role__bullets">
+          <li>Managed client accounts, cold outreach and deal negotiation across an eight-month full-time role.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role__head">
+          <div>
+            <h3 class="role__title">Retail Assistant</h3>
+            <p class="role__org">Bunnings Warehouse</p>
+          </div>
+          <p class="role__years">2021&mdash;2023</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section reveal">
+      <h2 class="section__title">Stack</h2>
+
+      <dl class="stack">
+        <div class="stack__row"><dt>Claude Code</dt><dd>agentic dev, daily driver</dd></div>
+        <div class="stack__row"><dt>Next.js, React, TypeScript</dt><dd>client builds</dd></div>
+        <div class="stack__row"><dt>Supabase</dt><dd>postgres, auth, storage</dd></div>
+        <div class="stack__row"><dt>Stripe</dt><dd>payments &amp; bookings</dd></div>
+        <div class="stack__row"><dt>Vercel, Git &amp; GitHub</dt><dd>deploys, version control</dd></div>
+        <div class="stack__row"><dt>Python, Java</dt><dd>coursework + scripting</dd></div>
+        <div class="stack__row"><dt>HTML, CSS, Tailwind</dt><dd>ui</dd></div>
+      </dl>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="edu" class="section reveal">
+      <h2 class="section__title">Education</h2>
+
+      <div class="edu">
+        <article class="edu__item">
+          <p class="edu__years">2025&mdash;2027</p>
+          <h3 class="edu__degree">Bachelor of Artificial Intelligence</h3>
+          <p class="edu__org">University of Technology Sydney</p>
+          <p class="edu__grade">second year &mdash; halfway through</p>
+        </article>
+        <article class="edu__item">
+          <p class="edu__years">2017&mdash;2022</p>
+          <h3 class="edu__degree">Higher School Certificate</h3>
+          <p class="edu__org">Endeavour Sports High School</p>
+          <p class="edu__grade">ATAR 80.05</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <h2 class="section__title">Contact</h2>
+
+      <dl class="contact">
+        <div class="contact__row">
+          <dt>Email</dt>
+          <dd><a href="mailto:woods04sean@gmail.com">woods04sean@gmail.com</a></dd>
+        </div>
+        <div class="contact__row">
+          <dt>Phone</dt>
+          <dd><a href="tel:+61490254358">0490 254 358</a></dd>
+        </div>
+        <div class="contact__row">
+          <dt>Location</dt>
+          <dd>Kogarah, Sydney</dd>
+        </div>
+        <div class="contact__row">
+          <dt>GitHub</dt>
+          <dd><a href="https://github.com/seanw00ds" target="_blank" rel="noopener">seanw00ds</a></dd>
+        </div>
+      </dl>
+
+      <form class="contact-form" action="https://formsubmit.co/woods04sean@gmail.com" method="POST">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New contact from seanwoods.work" />
+        <div class="contact-form__grid">
+          <input class="form-input" type="text" name="name" placeholder="your name" required />
+          <input class="form-input" type="email" name="email" placeholder="your email" required />
+        </div>
+        <textarea class="form-input form-textarea" name="message" placeholder="message&hellip;" required></textarea>
+        <button type="submit" class="btn btn--submit">send &rarr;</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>
+      <span>seanwoods.work</span>
+      <span class="footer__sep">/</span>
+      <span>built with claude code</span>
+      <span class="footer__sep">/</span>
+      <span>updated jul 2026</span>
+    </p>
   </footer>
 
   <script src="script.js"></script>
