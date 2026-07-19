@@ -238,6 +238,24 @@ main {
   transition: border-color .25s var(--ease), transform .25s var(--ease);
 }
 .project:hover { border-color: var(--line); transform: translateY(-2px); }
+.project__shot {
+  display: block;
+  margin: -1.4rem -1.5rem 0.5rem;
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+.project__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  filter: saturate(0.96);
+  transition: transform .35s var(--ease);
+}
+.project--featured .project__shot img { aspect-ratio: 21 / 9; }
+.project__shot:hover img { transform: scale(1.015); }
 .project__title {
   font-family: var(--mono);
   font-weight: 600;
@@ -361,6 +379,18 @@ main {
 }
 .contact__row dd a { border-bottom: 1px solid var(--line); transition: border-color .2s var(--ease), color .2s var(--ease); }
 .contact__row dd a:hover { color: var(--accent); border-color: var(--accent); }
+.phone-mask { font-family: var(--mono); letter-spacing: 0.08em; }
+.reveal-btn {
+  margin-left: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--fg-mute);
+  transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.reveal-btn:hover { color: var(--fg); border-color: var(--fg); }
 
 /* ---- CONTACT FORM --------------------------------------- */
 .contact-form { margin-top: 2.25rem; display: flex; flex-direction: column; gap: 0.6rem; }

@@ -1,10 +1,8 @@
-/* ── Theme toggle (persisted, respects system preference) ── */
+/* ── Theme toggle (persisted, defaults to light) ── */
 const root = document.documentElement;
 const stored = localStorage.getItem('theme');
 if (stored) {
   root.dataset.theme = stored;
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  root.dataset.theme = 'dark';
 }
 
 document.getElementById('themeToggle').addEventListener('click', () => {
@@ -27,3 +25,15 @@ const observer = new IntersectionObserver(
   { threshold: 0.08 }
 );
 revealEls.forEach((el) => observer.observe(el));
+
+/* ── Phone click-to-reveal ────────────────────────────────── */
+const phoneBtn = document.getElementById('phoneReveal');
+if (phoneBtn) {
+  phoneBtn.addEventListener('click', () => {
+    const dd = phoneBtn.parentElement;
+    const link = document.createElement('a');
+    link.href = 'tel:+61490254358';
+    link.textContent = '0490 254 358';
+    dd.replaceChildren(link);
+  });
+}
